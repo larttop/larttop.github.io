@@ -69,13 +69,31 @@
         }
 
         @media (max-width: 480px) {
+            .container {
+                flex-direction: column;
+            }
+
             .text {
                 font-size: 1.5rem;
+                text-align: center;
             }
 
             .link {
                 font-size: 0.9rem;
                 padding: 6px 12px;
+                position: relative;
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .container:active .text {
+                transform: translateX(-100vw);
+                opacity: 0;
+            }
+
+            .container:active .link {
+                opacity: 1;
+                pointer-events: auto;
             }
         }
     </style>
